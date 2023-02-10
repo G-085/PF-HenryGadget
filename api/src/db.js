@@ -10,9 +10,9 @@ const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}
   logging: false, // set to console.log to see the raw SQL queries
   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
   // Para DB deploy. Suelen pedir conexión ssl.
-  // dialectOptions: {
-  //   ssl: true
-  // },
+  dialectOptions: {
+    ssl: true
+  },
   define: {
     freezeTableName: true // Para que no le cambie el nombre a todas las tablas
   }
